@@ -1,0 +1,44 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.root {
+    -fx-font-family: "Arial";
+    -fx-font-size: 18px;
+    -fx-background-color: #f4f4f4;
+}
+
+.label {
+    -fx-text-fill: #333;
+}
+
+/* Estilo para o separador do Menu */
+.menu .separator {
+    -fx-background-color: #000000;  /* Cor da linha (preto) */
+    -fx-pref-width: 2px;  /* Largura da linha */
+}
+
+.button {
+    -fx-background-color: #FF6347; /* Cor de fundo vermelha para testar */
+    -fx-text-fill: white;  /* Texto branco */
+}
+
+.button {
+    -fx-background-color: #007bff; /* Cor azul */
+    -fx-text-fill: white;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 14px;
+}
+
+.button:hover {
+    -fx-background-color: #0056b3; /* Cor azul escuro no hover */
+}
+
+/* Estilos específicos para a tela de login */
+.login-container {
+    -fx-padding: 20px;
+    -fx-alignment: center;
+}
+
+.login-button {
+    -fx-background-color: #28a745;
+    -fx-text-fill: white;
+}
