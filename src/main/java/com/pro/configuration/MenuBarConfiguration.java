@@ -2,6 +2,8 @@ package com.pro.configuration;
 
 import java.util.logging.Logger;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -29,17 +31,21 @@ public class MenuBarConfiguration {
 		Menu menuEdit = createEditMenu();
 
 		menuBar.getMenus().addAll(menuFile, menuEdit);
-		menuBar.getStylesheets().add(getClass().getResource("../application.css").toExternalForm());
+		menuBar.getStylesheets().add(getClass().getResource("configuration.css").toExternalForm());
 	}
 
 	private Menu createFileMenu() {
 		MenuItem menuItemHome = new MenuItem("Home");
+		menuItemHome.setOnAction(e -> showNewAction("Home"));
 
 		MenuItem menuItemNew = new MenuItem("New");
+		menuItemNew.setOnAction(e -> showNewAction("New"));
 
 		MenuItem menuItemOpen = new MenuItem("Open");
+		menuItemOpen.setOnAction(e -> showNewAction("Open"));
 
 		MenuItem menuItemExit = new MenuItem("Exit");
+		menuItemExit.setOnAction(e -> stage.close());
 
 		Menu menuFile = new Menu("File");
 		menuFile.getItems().addAll(menuItemHome, menuItemNew, menuItemOpen, separator, menuItemExit);
@@ -53,5 +59,13 @@ public class MenuBarConfiguration {
 	
 	public MenuBar getMenuBar() {
 		return menuBar;
+	}
+
+	private void showNewAction(String locale) {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Ação "+ locale);
+		alert.setHeaderText(locale);
+		alert.setContentText("Você clicou em " + locale);
+		alert.showAndWait(); // Exibe o popup até o usuário fechar
 	}
 }

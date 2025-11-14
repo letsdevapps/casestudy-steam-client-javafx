@@ -1,0 +1,11 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+/* Estilo para o separador do Menu */
+.menu {
+	-fx-font-size: 16px;
+}
+
+.menu .separator {
+    -fx-background-color: #000000;
+    -fx-pref-width: 2px;
+}
